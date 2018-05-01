@@ -16,7 +16,7 @@ def calculator():
 
         # calculate result
         expression = request.form.get('expression')
-        clean_expression = re.sub('[^0-9,+,-,*,/]', '', expression)
+        clean_expression = re.sub('[^0-9,+,-,*,/,(,),+-,-+,--]', '', expression)
 
         if clean_expression is None or clean_expression == "":
             body = {"Error message": "Expression entered on invalid form"}
